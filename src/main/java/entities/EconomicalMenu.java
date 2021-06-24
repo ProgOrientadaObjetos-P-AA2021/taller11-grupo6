@@ -14,4 +14,5 @@ public class EconomicalMenu extends Menu{
     public void setPorcentajeDescuento(double porcentajeDescuento) {
         this.porcentajeDescuento = porcentajeDescuento;
     }
+
 }
