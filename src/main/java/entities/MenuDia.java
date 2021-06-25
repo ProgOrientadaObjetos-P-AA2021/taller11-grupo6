@@ -7,14 +7,18 @@ public class MenuDia extends Menu{
 
     public MenuDia(String nombrePlato, double valorInicial) {
         super(nombrePlato, valorInicial);
+        this.valorBebida =  0.75;
+        this.valorPostre = 1.15;
+        setValorMenu();
     }
 
     public MenuDia(String nombrePlato, double valorInicial, double valorPostre, double valorBebida) {
         super(nombrePlato, valorInicial);
+        setValorMenu();
     }
 
     public double getValorPostre() {
-        return (valorPostre == 0)? 1.00 : valorPostre;
+        return valorPostre;
     }
 
     public void setValorPostre(double valorPostre) {
@@ -22,7 +26,7 @@ public class MenuDia extends Menu{
     }
 
     public double getValorBebida() {
-        return (valorBebida == 0)? 0.75 : valorBebida;
+        return valorBebida;
     }
 
     public void setValorBebida(double valorBebida) {

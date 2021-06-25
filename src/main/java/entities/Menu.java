@@ -34,7 +34,7 @@ public abstract class Menu {
 
     @Override
     public String toString() {
-        return String.format(" Nombre del plato: %s \n Valor inicial: %s \n Valor completo: %s \n", nombrePlato,
+        return String.format("\n   Nombre del plato: %s\n   Valor inicial: %s\n   Valor completo: %s \n", nombrePlato,
                 valorInicial, valorMenu);
     }
 }

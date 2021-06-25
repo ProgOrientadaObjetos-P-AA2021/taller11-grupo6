@@ -57,10 +57,10 @@ public class Cuenta {
     }
 
     public String listadoMenusToString(){
-        String text = "\n  ";
+        String text = "\n";
 
         for (int i = 0; i < listadoMenus.size(); i++) {
-            text += String.format("Menu %s: %s \n", i, listadoMenus.get(i).toString());
+            text += String.format(" Menu %s: %s \n", i + 1, listadoMenus.get(i).toString());
         }
 
         return text;
@@ -69,7 +69,8 @@ public class Cuenta {
 
     @Override
     public String toString() {
-        return String.format("}===== Factura ====={ Cliente: %s \nConsumido: %s \nSubtotal: %.2f IVA: %.2f Total: %.2f" ,
+        return String.format("============ Factura ============ \nCliente: %s \nConsumido: %s  Subtotal: %.2f " +
+                        "\n  IVA: %.2f\n  Total: %.2f" ,
                 cliente, listadoMenusToString(), subtotal, IVA, valorTotal);
     }
 }

@@ -1,5 +1,6 @@
 # taller11
 
+## Joel Romero y Gerald Jaramillo
 
 ## Problemática
 

@@ -6,17 +6,20 @@ public class MenuKids extends Menu{
 
     public MenuKids(String nombrePlato, double valorInicial) {
         super(nombrePlato,  valorInicial);
+        this.valorPastel =  1.20;
+        this.valorHelado = 1.00;
+        setValorMenu();
     }
 
     public MenuKids(String nombrePlato, double valorInicial, double valorHelado, double valorPastel) {
         super(nombrePlato,  valorInicial);
         this.valorHelado = valorHelado;
         this.valorPastel = valorPastel;
+        setValorMenu();
     }
 
     public double getValorHelado() {
-        // 1.00 valor por defecto
-        return (valorHelado == 0)? 1.00 : valorHelado;
+        return  valorHelado;
     }
 
     public void setValorHelado(double valorHelado) {
@@ -24,8 +27,7 @@ public class MenuKids extends Menu{
     }
 
     public double getValorPastel() {
-        // 1.20 valor por defecto
-        return (valorPastel == 0)? 1.20 : valorPastel;
+        return valorPastel;
     }
 
     public void setValorPastel(double valorPastel) {
@@ -44,6 +46,6 @@ public class MenuKids extends Menu{
     @Override
     public String toString() {
         this.nombrePlato += " + helado + pastel";
-        return String.format("%s Valor helado: %.2f\n Valor pastel: %.2f\n", super.toString(), valorHelado, valorPastel);
+        return String.format("%s   Valor helado: %.2f\n   Valor pastel: %.2f\n", super.toString(), valorHelado, valorPastel);
     }
 }
