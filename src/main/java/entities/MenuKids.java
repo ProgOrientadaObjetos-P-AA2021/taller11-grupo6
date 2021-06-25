@@ -21,6 +21,6 @@ public class MenuKids extends Menu{
     }
 
     public void setValorPastel(double valorPastel) {
-        this.valorPastel = valorPastel;
+        this.valorPastel = valorPastel; 
     }
 }

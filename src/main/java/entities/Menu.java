@@ -10,11 +10,6 @@ public abstract class Menu {
         this.valorMenu = valorMenu;
         this.valorInicial = valorInicial;
     }
-<<<<<<< HEAD
-    
-=======
->>>>>>> ce9dd9d0a8115986b9cb08c4c5504902eac0a790
-
     public String getNombrePlato() {
         return nombrePlato;
     }
