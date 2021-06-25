@@ -1,15 +1,19 @@
 package entities;
-
+/**
+ *
+ * @author USUARIO PC
+ */
 public abstract class Menu {
-    private String nombrePlato;
-    private double valorMenu;
-    private double valorInicial;
+    protected String nombrePlato;
+    protected double valorMenu;
+    protected double valorInicial;
 
-    public Menu(String nombrePlato, double valorMenu, double valorInicial) {
+    public Menu(String nombrePlato, double valorInicial) {
         this.nombrePlato = nombrePlato;
-        this.valorMenu = valorMenu;
         this.valorInicial = valorInicial;
+        this.valorMenu = 0;
     }
+
     public String getNombrePlato() {
         return nombrePlato;
     }
@@ -18,19 +22,19 @@ public abstract class Menu {
         this.nombrePlato = nombrePlato;
     }
 
-    public double getValorMenu() {
-        return valorMenu;
-    }
-
-    public void setValorMenu(double valorMenu) {
-        this.valorMenu = valorMenu;
-    }
-
     public double getValorInicial() {
         return valorInicial;
     }
 
-    public void setValorInicial(double valorInicial) {
-        this.valorInicial = valorInicial;
+    public double getValorMenu() {
+        return valorMenu;
     }
-}  
+
+    abstract void setValorMenu();
+
+    @Override
+    public String toString() {
+        return String.format(" Nombre del plato: %s \n Valor inicial: %s \n Valor completo: %s \n", nombrePlato,
+                valorInicial, valorMenu);
+    }
+}
