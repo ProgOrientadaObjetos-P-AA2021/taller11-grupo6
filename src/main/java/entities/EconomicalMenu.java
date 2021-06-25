@@ -5,6 +5,7 @@ public class EconomicalMenu extends Menu{
 
     public EconomicalMenu(String nombrePlato, double valorInicial) {
         super(nombrePlato, valorInicial);
+        setValorMenu();
     }
 
     public double getPorcentajeDescuento() {
@@ -23,6 +24,6 @@ public class EconomicalMenu extends Menu{
     public String toString() {
         this.nombrePlato += " + guarnición + pastel";
         System.out.println("-----------------------");
-        return String.format("%s  Porcentaje Descuento: %.2f\n", super.toString(), porcentajeDescuento);
+        return String.format("%s   Porcentaje Descuento: %.2f\n", super.toString(), porcentajeDescuento);
     }
 }

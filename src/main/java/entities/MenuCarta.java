@@ -7,16 +7,20 @@ public class MenuCarta extends Menu{
 
     public MenuCarta(String nombrePlato, double valorInicial) {
         super(nombrePlato, valorInicial);
+        this.valorBebida =  1.20;
+        this.valorGuarnicion = 1.00;
+        setValorMenu();
     }
 
     public MenuCarta(String nombrePlato, double valorInicial, double valorBebida, double valorGuarnicion) {
         super(nombrePlato, valorInicial);
         this.valorBebida = valorBebida;
         this.valorGuarnicion = valorGuarnicion;
+        setValorMenu();
     }
 
     public double getValorGuarnicion() {
-        return (valorGuarnicion == 0)? 1.00 : valorGuarnicion;
+        return valorGuarnicion;
     }
 
     public void setValorGuarnicion(double valorGuarnicion) {

@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+//Joel Romero y Gerald Jaramillo
 public class Main {
     public static void main(String[] args) {
         MenuKids kid1 = new MenuKids("Hambuerguesa de queso", 3.00);
