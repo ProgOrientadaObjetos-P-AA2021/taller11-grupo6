@@ -1,37 +1,22 @@
-<<<<<<< HEAD
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package entities;
-
-/**
- *
- * @author USUARIO PC
- */
-public class MenuCarta extends Menu{
-    
-    
-    public MenuCarta(String nombrePlato, double valorMenu, double valorInicial) {
-        super(nombrePlato, valorMenu, valorInicial);
-    }
-    
-    
-=======
 package entities;
 
 public class MenuCarta extends Menu{
     private double valorGuarnicion;
     private double valorBebida;
-    private double porcentajeAdicional;
+    private final double porcentajeAdicional = 0.06;
 
-    public MenuCarta(String nombrePlato, double valorMenu, double valorInicial) {
-        super(nombrePlato, valorMenu, valorInicial);
+    public MenuCarta(String nombrePlato, double valorInicial) {
+        super(nombrePlato, valorInicial);
+    }
+
+    public MenuCarta(String nombrePlato, double valorInicial, double valorBebida, double valorGuarnicion) {
+        super(nombrePlato, valorInicial);
+        this.valorBebida = valorBebida;
+        this.valorGuarnicion = valorGuarnicion;
     }
 
     public double getValorGuarnicion() {
-        return valorGuarnicion;
+        return (valorGuarnicion == 0)? 1.00 : valorGuarnicion;
     }
 
     public void setValorGuarnicion(double valorGuarnicion) {
@@ -50,8 +35,21 @@ public class MenuCarta extends Menu{
         return porcentajeAdicional;
     }
 
-    public void setPorcentajeAdicional(double porcentajeAdicional) {
-        this.porcentajeAdicional = porcentajeAdicional;
+
+    public void setValorInicial(double valorInicial) {
+        this.valorInicial = valorInicial;
     }
->>>>>>> ce9dd9d0a8115986b9cb08c4c5504902eac0a790
+
+    @Override
+    public void setValorMenu() {
+        this.valorMenu = valorInicial + (valorInicial * porcentajeAdicional);
+    }
+
+    @Override
+    public String toString() {
+        this.nombrePlato += " + guarnición + pastel";
+        return String.format("%s  Valor porción guarnición: %.2f\n Valor bebida: %.2f\n Porcentaje adicional por servicio: %.2f",
+                super.toString(), valorGuarnicion, valorBebida, porcentajeAdicional);
+    }
+
 }
